@@ -36,6 +36,12 @@ namespace fintamath {
   std::shared_ptr<Object> Operator::clone() const {
     return std::make_shared<Operator>(*this);
   }
+  bool Operator::equals(const Object &rhs) const {
+    if (rhs.is<Operator>() && (this->name == rhs.to<Operator>().name)){
+      return true;
+    }
+    return false;
+  }
 
   namespace types {
     bool isOperator(const std::string &str) {

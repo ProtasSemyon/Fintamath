@@ -29,6 +29,13 @@ namespace fintamath {
     return name;
   }
 
+  bool Constant::equals(const Object &rhs) const {
+    if (rhs.is<Constant>() && (this->name == rhs.to<Constant>().name)){
+      return true;
+    }
+    return false;
+  }
+
   namespace types {
     bool isConstant(const std::string_view &str) {
       if (str == "e") {

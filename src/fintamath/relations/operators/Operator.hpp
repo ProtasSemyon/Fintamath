@@ -12,6 +12,7 @@ namespace fintamath {
 
     std::string toString() const override;
     std::shared_ptr<Object> clone() const override;
+    bool equals(const Object& rhs) const override;
 
   private:
     char name;

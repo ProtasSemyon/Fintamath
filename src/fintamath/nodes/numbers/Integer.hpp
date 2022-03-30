@@ -81,6 +81,7 @@ namespace fintamath {
     Integer sqrt() const;
     std::string toString() const override;
     std::shared_ptr<Object> clone() const override;
+    bool equals(const Object& rhs) const override;
   private:
     std::vector<int64_t> intVect;
     bool sign{};

@@ -17,6 +17,8 @@ namespace fintamath {
     bool is() const;
 
     virtual std::shared_ptr<Object> clone() const = 0;
+
+    virtual bool equals(const Object& rhs) const = 0;
   };
 
   template <typename T>
