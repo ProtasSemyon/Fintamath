@@ -352,3 +352,16 @@ TEST(RationalTests, toStringTest) {
   EXPECT_EQ(Rational(5, 2).toString(), "5/2");
   EXPECT_EQ(Rational(55, -10).toString(), "-11/2");
 }
+
+TEST(RationalTests, cloneTests){
+  auto a = Rational("10.1");
+  EXPECT_TRUE(&a != &(*a.clone()) && a.equals((*a.clone()).to<Rational>()));
+}
+
+TEST(RationalTests, equalsTests){
+  EXPECT_TRUE(Rational("100").equals(Rational("100")));
+  EXPECT_TRUE(Rational("10.1").equals(Rational(101, 10)));
+  EXPECT_TRUE(Rational("10.1").equals(Rational(-101, -10)));
+  EXPECT_FALSE(Rational("10.1").equals(Rational("-100")));
+  EXPECT_FALSE(Rational("1.01").equals(Rational("10.1")));
+}
