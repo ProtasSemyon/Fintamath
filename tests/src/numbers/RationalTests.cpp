@@ -359,13 +359,13 @@ TEST(RationalTests, toStringTest) {
 
 TEST(RationalTests, cloneTests){
   auto a = Rational("10.1");
-  EXPECT_TRUE(&a != &(*a.clone()) && a.equals((*a.clone()).to<Rational>()));
+  EXPECT_TRUE(&a != &(*a.clone()) && a == (*a.clone()).to<Rational>());
 }
 
 TEST(RationalTests, equalsTests){
-  EXPECT_TRUE(Rational("100").equals(Rational("100")));
-  EXPECT_TRUE(Rational("10.1").equals(Rational(101, 10)));
-  EXPECT_TRUE(Rational("10.1").equals(Rational(-101, -10)));
-  EXPECT_FALSE(Rational("10.1").equals(Rational("-100")));
-  EXPECT_FALSE(Rational("1.01").equals(Rational("10.1")));
+  EXPECT_TRUE(Rational("100") == Rational("100"));
+  EXPECT_TRUE(Rational("10.1") == Rational(101, 10));
+  EXPECT_TRUE(Rational("10.1") == Rational(-101, -10));
+  EXPECT_FALSE(Rational("10.1") == Rational("-100"));
+  EXPECT_FALSE(Rational("1.01") == Rational("10.1"));
 }
