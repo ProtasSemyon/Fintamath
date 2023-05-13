@@ -51,6 +51,7 @@
 #include "fintamath/functions/other/Rad.hpp"
 #include "fintamath/functions/powers/Exp.hpp"
 #include "fintamath/functions/powers/Pow.hpp"
+#include "fintamath/functions/powers/Root.hpp"
 #include "fintamath/functions/powers/Sqrt.hpp"
 #include "fintamath/functions/trigonometry/Acos.hpp"
 #include "fintamath/functions/trigonometry/Acot.hpp"
@@ -187,6 +188,7 @@ struct ParserConfig {
     IFunction::registerType<Lg>();
     IFunction::registerType<Exp>();
     IFunction::registerType<Sqrt>();
+    IFunction::registerType<Root>();
     IFunction::registerType<Sin>();
     IFunction::registerType<Cos>();
     IFunction::registerType<Tan>();

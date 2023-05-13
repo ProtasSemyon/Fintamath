@@ -516,7 +516,7 @@ std::unique_ptr<IMathObject> makeExpr(const IFunction &func, const ArgumentsRefV
   ArgumentsPtrVector argsPtrVect;
 
   for (const auto &arg : args) {
-    argsPtrVect.emplace_back(arg.get().toMinimalObject());
+    argsPtrVect.emplace_back(arg.get().clone());
   }
 
   return makeExpr(func, argsPtrVect)->clone();
